@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Momento</title>
+    <style>
+        body {
+            background-color: white; /* Fundo branco */
+            text-align: center;
+            color: black; /* Texto em preto para contraste */
+            font-family: Arial, sans-serif;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .heart {
+            position: absolute;
+            animation: fall 5s infinite;
+            font-size: 24px;
+        }
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Ah, não tem como resistir a mim! Eu te amo muito!😍</h2>
+    <img src="https://drive.google.com/file/d/1u6FaUeGmksVln6Hs-y9xauX8bG65gmT8/view?usp=drive_link" alt="Nossa foto juntos" />
+    
+    <!-- Geração de corações caindo -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(heart);
+
+            // Remover o coração após a animação
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300); // Adiciona um novo coração a cada 300ms
+    </script>
+</body>
+</html>
+
+

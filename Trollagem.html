@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Pergunta Importante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #444;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+        button:hover {
+            background-color: #d3f9d8;
+        }
+        #nao {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const button = document.getElementById("nao");
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function showMessage() {
+            window.location.href = "final.html";  // Redireciona para a segunda página
+        }
+    </script>
+</head>
+<body>
+    <h1>Você quer construir uma vida linda ao meu lado para sempre? ❤️</h1>
+    <h2>Olhe bem nos meus olhos... 💖</h2>  <!-- Adicionando o emoji de coração nos olhos -->
+
+    <div class="buttons">
+        <button onclick="showMessage()">Sim</button>
+        <button id="nao" onclick="moveButton()" onmouseover="moveButton()">Não</button>
+    </div>
+</body>
+</html>
+
+
