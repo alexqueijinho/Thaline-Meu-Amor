@@ -1,67 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Momento</title>
-    <style>
-        body {
-            background-color: white; /* Fundo branco */
-            text-align: center;
-            color: black; /* Texto em preto para contraste */
-            font-family: Arial, sans-serif;
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-        h2 {
-            font-size: 30px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 50px;
-        }
-        .heart {
-            position: absolute;
-            animation: fall 5s infinite;
-            font-size: 24px;
-        }
-        @keyframes fall {
-            0% {
-                top: -50px;
-                opacity: 1;
-            }
-            100% {
-                top: 100vh;
-                opacity: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilo para a segunda página com imagem responsiva */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffcccc; /* Fundo vermelho claro */
+      text-align: center;
+    }
+
+    /* Estilo da imagem responsiva */
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 500px; /* Limita o tamanho máximo da imagem */
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Estilo de corações caindo (simples animação) */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      animation: fall 5s infinite;
+    }
+
+    @keyframes fall {
+      0% { top: -50px; opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    /* Estilo para a frase */
+    h1 {
+      color: white;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .heart {
+      font-size: 30px;
+      color: red;
+      position: absolute;
+      animation: moveHeart 5s infinite;
+    }
+
+    @keyframes moveHeart {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+  <title>Página do Amor</title>
 </head>
 <body>
-    <h2>Ah, não tem como resistir a mim! Eu te amo muito!😍</h2>
-    <img src="https://github.com/alexqueijinho/Thaline-Meu-Amor/blob/main/IMG_20241214_193527.jpg?raw=true" alt="Nossa foto juntos" />
-    
-    <!-- Geração de corações caindo -->
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = `${Math.random() * 100}vw`;
-            document.body.appendChild(heart);
 
-            // Remover o coração após a animação
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
+  <h1>Ah, não tem como resistir a mim! 💖 Eu te amo muito! 💖</h1>
 
-        setInterval(createHeart, 300); // Adiciona um novo coração a cada 300ms
-    </script>
+  <!-- Coração caindo (adicione mais se quiser) -->
+  <div class="hearts">
+    <div class="heart" style="left: 20%;">❤️</div>
+    <div class="heart" style="left: 40%;">❤️</div>
+    <div class="heart" style="left: 60%;">❤️</div>
+    <div class="heart" style="left: 80%;">❤️</div>
+  </div>
+
+  <!-- Imagem com o nosso amor -->
+  <img src="URL-DA-SUA-IMAGEM" alt="Imagem do casal">
+
 </body>
 </html>
+
 
 
